@@ -1,5 +1,73 @@
+# 🚀 VProfile Lift & Shift Migration
+
+## Architecture Overview
+
+### On-Prem Environment
+
+![On-Prem Architecture](images/on-prem-architecture.png.jpg)
+
+This diagram illustrates the original on-premises multi-tier architecture before migration to AWS.
+
+---
+
+### AWS Architecture
+
+![AWS Architecture](images/aws-architecture.png.jpg)
+
+The original environment was migrated to AWS using a Lift & Shift approach.
+
+---
+
+## Infrastructure
+
+### EC2 Instances
+
+![EC2 Instances](images/ec2-instances.png.jpg)
+
+Application and backend services deployed on EC2 instances.
+
+---
+
+### Security Groups
+
+![Security Groups](images/security-groups.png.jpg)
+
+Tier-based security model controlling communication between components.
+
+---
+
+### Route 53
+
+![Route53](images/route53-dns.png.jpg)
+
+Public and private hosted zones for DNS resolution.
+
+---
+
+### Target Group Health Check
+
+![Target Group](images/target-group-healthcheck.png.jpg)
+
+Application Load Balancer target group health monitoring.
+
+---
+
+## Application
+
+### Login Page
+
+![Login](images/application-login.png.jpg)
+
+Application login interface running on AWS infrastructure.
+
+### Dashboard
+
+![Dashboard](images/application-dashboard.png.jpg)
+
+Successful application deployment validation after migration.
+
+
 # Prerequisites
-#
 - JDK 17 or 21
 - Maven 3.9
 - MySQL 8
@@ -15,6 +83,7 @@
 - Memcached
 - Rabbitmq
 - ElasticSearch
+
 # Database
 Here,we used Mysql DB 
 sql dump file:
