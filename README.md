@@ -4,7 +4,7 @@
 
 ### On-Prem Environment
 
-![On-Prem Architecture](images/on-prem-architecture.png.jpg)
+![On-Prem Architecture](images/on-prem-architecture.jpg)
 
 This diagram illustrates the original on-premises multi-tier architecture before migration to AWS.
 
@@ -12,7 +12,7 @@ This diagram illustrates the original on-premises multi-tier architecture before
 
 ### AWS Architecture
 
-![AWS Architecture](images/aws-architecture.png.jpg)
+![AWS Architecture](images/aws-architecture.jpg)
 
 The original environment was migrated to AWS using a Lift & Shift approach.
 
@@ -22,7 +22,7 @@ The original environment was migrated to AWS using a Lift & Shift approach.
 
 ### EC2 Instances
 
-![EC2 Instances](images/ec2-instances.png.jpg)
+![EC2 Instances](images/ec2-instances.jpg)
 
 Application and backend services deployed on EC2 instances.
 
@@ -30,7 +30,7 @@ Application and backend services deployed on EC2 instances.
 
 ### Security Groups
 
-![Security Groups](images/security-groups.png.jpg)
+![Security Groups](images/security-groups.jpg)
 
 Tier-based security model controlling communication between components.
 
@@ -38,7 +38,7 @@ Tier-based security model controlling communication between components.
 
 ### Route 53
 
-![Route53](images/route53-dns.png.jpg)
+![Route53](images/route53-dns.jpg)
 
 Public and private hosted zones for DNS resolution.
 
@@ -46,7 +46,7 @@ Public and private hosted zones for DNS resolution.
 
 ### Target Group Health Check
 
-![Target Group](images/target-group-healthcheck.png.jpg)
+![Target Group](images/target-group-healthcheck.jpg)
 
 Application Load Balancer target group health monitoring.
 
@@ -56,13 +56,13 @@ Application Load Balancer target group health monitoring.
 
 ### Login Page
 
-![Login](images/application-login.png.jpg)
+![Login](images/application-login.jpg)
 
 Application login interface running on AWS infrastructure.
 
 ### Dashboard
 
-![Dashboard](images/application-dashboard.png.jpg)
+![Dashboard](images/application-dashboard.jpg)
 
 Successful application deployment validation after migration.
 
