@@ -1,12 +1,19 @@
-# 🚀 VProfile Lift & Shift Migration
+# 🚀 VProfile Lift & Shift
 
-## Architecture Overview
 
 ### On-Prem Environment
 
 ![On-Prem Architecture](images/on-prem-architecture.jpg)
 
-This diagram illustrates the original on-premises multi-tier architecture before migration to AWS.
+This diagram represents the original on-premises infrastructure before migration. The environment was designed using a traditional multi-tier architecture consisting of : 
+
+- NGINX as the load balancer
+- Apache Tomcat application servers 
+- MySQL database server 
+- RabbitMQ messaging service 
+- Memcached caching layer 
+
+The goal was to replicate this architecture in AWS while maintaining application functionality and minimizing code changes.
 
 ---
 
@@ -14,17 +21,34 @@ This diagram illustrates the original on-premises multi-tier architecture before
 
 ![AWS Architecture](images/aws-architecture.jpg)
 
-The original environment was migrated to AWS using a Lift & Shift approach.
+This architecture shows the Lift & Shift migration of the VProfile application to AWS.
+Key components include  :
+
+- Custom VPC with public and private subnets
+- Application Load Balancer (ALB) 
+- Auto Scaling Group for application servers 
+- EC2 instances for application and backend services 
+- Route 53 for DNS management 
+- CloudWatch for monitoring 
+- IAM roles for secure service access 
+
+The migration focused on infrastructure transformation rather than application refactoring.
 
 ---
-
-## Infrastructure
 
 ### EC2 Instances
 
 ![EC2 Instances](images/ec2-instances.jpg)
 
-Application and backend services deployed on EC2 instances.
+This screenshot displays the EC2 instances used to host the application and supporting services.
+Each component was deployed on a dedicated instance  :
+
+* app01 → Apache Tomcat 
+* db01 → MySQL Database 
+* rmq01 → RabbitMQ 
+* mc01 → Memcached 
+
+This separation improves maintainability and closely resembles production environments.
 
 ---
 
@@ -32,15 +56,29 @@ Application and backend services deployed on EC2 instances.
 
 ![Security Groups](images/security-groups.jpg)
 
-Tier-based security model controlling communication between components.
+Security Groups were configured using a tier-based access model. Examples  :
+
+* ALB accepts inbound HTTP traffic
+* Application servers accept traffic only from the ALB 
+* Backend services accept traffic only from the application tier
+
+This design follows the principle of least privilege and enhances security.
 
 ---
 
-### Route 53
+### Route 53 Configuration
 
 ![Route53](images/route53-dns.jpg)
 
-Public and private hosted zones for DNS resolution.
+Amazon Route 53 was used to manage DNS records for both public and private services.
+
+Features implemented  :
+
+* Public Hosted Zone for external application access 
+* Private Hosted Zone for internal service communication 
+* DNS-based service discovery 
+
+This simplifies infrastructure management and improves scalability.
 
 ---
 
@@ -48,7 +86,15 @@ Public and private hosted zones for DNS resolution.
 
 ![Target Group](images/target-group-healthcheck.jpg)
 
-Application Load Balancer target group health monitoring.
+Application instances were registered in an Application Load Balancer Target Group.
+
+Health checks continuously verify application availability.
+
+Benefits  :
+
+* Automatic traffic routing to healthy instances 
+* Improved reliability 
+* Better user experience
 
 ---
 
@@ -58,13 +104,27 @@ Application Load Balancer target group health monitoring.
 
 ![Login](images/application-login.jpg)
 
-Application login interface running on AWS infrastructure.
+This login page confirms successful deployment of the application on AWS infrastructure.
+Successful access verifies  :
+
+* ALB configuration 
+* Route 53 DNS resolution 
+* Tomcat deployment 
+* Backend service connectivity
 
 ### Dashboard
 
 ![Dashboard](images/application-dashboard.jpg)
 
-Successful application deployment validation after migration.
+The dashboard demonstrates that the application is fully operational after migration.
+
+It confirms : 
+* Database connectivity 
+* Session management 
+* Messaging integration 
+* End-to-end functionality 
+
+This serves as the final validation step for the Lift & Shift migration project.
 
 
 # Prerequisites
