@@ -1,9 +1,9 @@
-# 🚀 VProfile Lift & Shift
+#  VProfile Lift & Shift
 
 
 ### On-Prem Environment
 
-![On-Prem Architecture](images/on-prem-architecture.jpg)
+![On-Prem Architecture](assets/on-prem-architecture.jpg)
 
 This diagram represents the original on-premises infrastructure before migration. The environment was designed using a traditional multi-tier architecture consisting of : 
 
@@ -19,7 +19,7 @@ The goal was to replicate this architecture in AWS while maintaining application
 
 ### AWS Architecture
 
-![AWS Architecture](images/aws-architecture.jpg)
+![AWS Architecture](assets/aws-architecture.jpg)
 
 This architecture shows the Lift & Shift migration of the VProfile application to AWS.
 Key components include  :
@@ -38,7 +38,7 @@ The migration focused on infrastructure transformation rather than application r
 
 ### EC2 Instances
 
-![EC2 Instances](images/ec2-instances.jpg)
+![EC2 Instances](assets/ec2-instances.jpg)
 
 This screenshot displays the EC2 instances used to host the application and supporting services.
 Each component was deployed on a dedicated instance  :
@@ -54,7 +54,7 @@ This separation improves maintainability and closely resembles production enviro
 
 ### Security Groups
 
-![Security Groups](images/security-groups.jpg)
+![Security Groups](assets/security-groups.jpg)
 
 Security Groups were configured using a tier-based access model. Examples  :
 
@@ -68,7 +68,7 @@ This design follows the principle of least privilege and enhances security.
 
 ### Route 53 Configuration
 
-![Route53](images/route53-dns.jpg)
+![Route53](assets/route53-dns.jpg)
 
 Amazon Route 53 was used to manage DNS records for both public and private services.
 
@@ -84,7 +84,7 @@ This simplifies infrastructure management and improves scalability.
 
 ### Target Group Health Check
 
-![Target Group](images/target-group-healthcheck.jpg)
+![Target Group](assets/target-group-healthcheck.jpg)
 
 Application instances were registered in an Application Load Balancer Target Group.
 
@@ -102,7 +102,7 @@ Benefits  :
 
 ### Login Page
 
-![Login](images/application-login.jpg)
+![Login](assets/application-login.jpg)
 
 This login page confirms successful deployment of the application on AWS infrastructure.
 Successful access verifies  :
@@ -114,7 +114,7 @@ Successful access verifies  :
 
 ### Dashboard
 
-![Dashboard](images/application-dashboard.jpg)
+![Dashboard](assets/application-dashboard.jpg)
 
 The dashboard demonstrates that the application is fully operational after migration.
 
